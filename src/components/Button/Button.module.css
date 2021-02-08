@@ -1,6 +1,6 @@
 .button {
   background-color: var(--white-color);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   font: var(--primary-bold-text-3);
   text-align: center;
 }

@@ -10,9 +10,9 @@ const userProfile = {
 }
 
 const jobListings = [
-  { title: "Product Manager", location: "Austin, TX", posted: "10/04/2020", sponsorship: "Free", status: "Open" },
-  { title: "CEO", location: "Austin, TX", posted: "12/30/2020", sponsorship: "Sponsored", status: "Paused" },
-  { title: "Software Engineer", location: "Seattle, WA", posted: "11/18/2020", sponsorship: "Free", status: "Closed" }
+  { title: "Product Manager", location: "Austin, TX", posted: "10/04/2020", sponsorship: "Free", status: "Open", edit: { id: 1, text: "Edit" } },
+  { title: "CEO", location: "Austin, TX", posted: "12/30/2020", sponsorship: "Sponsored", status: "Paused", edit: { id: 2, text: "Edit" } },
+  { title: "Software Engineer", location: "Seattle, WA", posted: "11/18/2020", sponsorship: "Free", status: "Closed", edit: { id: 3, text: "Edit" } }
 ];
 
 
