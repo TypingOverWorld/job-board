@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--grey-color-4);
+  font: var(--secondary-bold-text-6);
+}
+
+.description {
+  color: var(--grey-color-3);
+  font: var(--secondary-text-2);
+  margin-left: 8px;
+}

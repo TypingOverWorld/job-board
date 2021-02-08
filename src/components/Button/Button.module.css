@@ -1,0 +1,42 @@
+.button {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  font: var(--primary-bold-text-3);
+  text-align: center;
+}
+
+.button:focus {
+  box-shadow:  0 0 0 2px var(--white-color), 0 0 0 3px var(--primary-color-darken);
+  outline: none;
+}
+
+/* Primary Button Style */
+
+.primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+}
+
+.primary:hover {
+  background-color: var(--primary-color-darken);
+}
+
+/* Secondary Button Style */
+
+.secondary {
+  background-color: var(--white-color);
+  border: var(--border-1px-solid);
+  color: var(--primary-color);
+}
+
+.secondary:hover {
+  background-color: var(--grey-color-1);
+  color: var(--white-color);
+}
+
+/* Button Size Styles */
+
+.medium {
+  padding: 13px 16px;
+}

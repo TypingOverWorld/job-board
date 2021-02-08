@@ -1,0 +1,15 @@
+.header {
+  background-color: #2d2d2d;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+  width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .container {
+    max-width: 780px; /* From Figna width setting */
+  }
+}
