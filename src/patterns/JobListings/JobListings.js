@@ -2,11 +2,13 @@ import styles from './JobListings.module.css';
 import Button from '../../components/Button';
 import { useHistory } from 'react-router-dom';
 
-function JobListings({ jobs, setJobs }) {
+function JobListings({ jobs }) {
   const categories = ["Job Title", "Posted", "Sponsorship", "Status", ""];
   const history = useHistory();
-  function handleSubmit(id) {
-    history.push('./edit-listing', { params: id })
+
+  function handleSubmit(...args) {
+    let job = { ...args };
+    history.push('./edit-listing', { params: job })
   };
 
   return (
@@ -37,7 +39,7 @@ function JobListings({ jobs, setJobs }) {
           </span>
           <span className={styles.listingText}>
             <Button
-              onClick={handleSubmit(id)}
+              onClick={handleSubmit({ title, location, posted, sponsorship, status, id })}
               type="secondary">
               Edit
             </Button>

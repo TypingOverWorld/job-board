@@ -41,7 +41,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## TODO
 
+[ ] Correct styling of the chevron for form dropdowns
 [ ] If application is utilized in multiple timezones, would need to add moment timezone and updated "posted" data
 [ ] Split form fields into separate components so that create/edit can utilize the same form pattern
-[ ] Learn React Testing Library
+[ ] Learn React Testing Library and add tests
 [ ] Add transitions to routing ex: [CSS Tricks](https://css-tricks.com/animating-between-views-in-react/)
+[ ] Add errors and validation to form inputs
+[ ] Add confirmation page when submitting a new job listing
+[ ] Add :slug to react router path for editing of listings

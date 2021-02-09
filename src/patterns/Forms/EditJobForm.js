@@ -3,25 +3,24 @@ import styles from './JobForm.module.css'
 import cx from 'classnames';
 import Button from '../../components/Button';
 import { useHistory } from 'react-router-dom';
-import uuid from 'react-uuid';
-import { format } from 'date-fns';
 
-function JobForm(props) {
-  const { type, className: customClassName, onSubmit = () => { } } = props;
+function EditJobForm(props) {
+  const { jobToEdit, type, className: customClassName, onSubmit = () => { } } = props;
   const className = cx(styles.form, styles[type], {
     [customClassName]: !!customClassName
   });
   const history = useHistory();
-  const [title, setTitle] = useState('');
-  const [location, setLocation] = useState('');
-  const [sponsorship, setSponsorship] = useState('Free');
-  const [status, setStatus] = useState('Open');
+  // couldn't deconstruct all props without have duplicated title, location, sponsorship, and status
+  const { id, posted } = jobToEdit;
+  console.log(id, posted);
+  const [title, setTitle] = useState(jobToEdit.title);
+  const [location, setLocation] = useState(jobToEdit.location);
+  const [sponsorship, setSponsorship] = useState(jobToEdit.sponsorship);
+  const [status, setStatus] = useState(jobToEdit.status);
 
   function handleSubmit(event) {
     event.preventDefault();
-    const date = new Date();
-    const formattedDate = format(date, 'mm/dd/yyyy');
-    onSubmit({ id: uuid(), title, location, sponsorship, status, posted: formattedDate });
+    onSubmit({ id, title, location, sponsorship, status, posted });
     history.push('/');
   }
 
@@ -29,10 +28,10 @@ function JobForm(props) {
     <form className={className} onSubmit={handleSubmit}>
       <section className={styles.header}>
         <h1 className={styles.title}>
-          Add a new job
+          Edit job
         </h1>
         <p className={styles.text}>
-          Fill out the information for your new job listing.
+          Edit the information for your job listing.
         </p>
       </section>
       <section className={styles.selections}>
@@ -40,13 +39,13 @@ function JobForm(props) {
           <div>Job Title</div>
           <div className={styles.description}>What is the name of the role?</div>
         </label>
-        <input className={styles.input} type="text" name="title" id="jobTitle" value={title} placeholder="e.g. Software Engineer" onChange={(e) => setTitle(e.target.value)} />
+        <input className={styles.input} type="text" name="title" id="jobTitle" value={title} placeholder={title} onChange={(e) => setTitle(e.target.value)} />
 
         <label className={styles.label} for="jobLocation">
           <div>Location</div>
           <div className={styles.description}>Where is this job?</div>
         </label>
-        <input className={styles.input} type="text" name="location" id="jobLocation" value={location} placeholder="e.g. Chicago, IL" onChange={(e) => setLocation(e.target.value)} />
+        <input className={styles.input} type="text" name="location" id="jobLocation" value={location} placeholder={location} onChange={(e) => setLocation(e.target.value)} />
 
         <label className={styles.label} for="sponsorship">
           <div>Sponsorship</div>
@@ -69,11 +68,14 @@ function JobForm(props) {
 
       </section >
       <section className={styles.submit}>
-        <Button type="secondary" onClick={() => history.push('/')}>Cancel</Button>
+        <Button type="secondary"
+          onClick={() => history.push('/')}>
+          Cancel
+        </Button>
         <Button>{type} Job</Button>
       </section>
     </form >
   );
 }
 
-export default JobForm;
+export default EditJobForm;

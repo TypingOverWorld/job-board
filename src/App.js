@@ -21,7 +21,7 @@ const jobListings = [
 
 function App() {
   const [jobs, setJobs] = useState(jobListings);
-  const editJobArray = (jobs, id, title, location, sponsorship, status) => {
+  const editJobArray = ({ id, title, location, sponsorship, status }) => {
     // Find the job
     const jobIndex = jobs.findIndex(job => job.id === id);
     let newArray = [...jobs];
@@ -37,14 +37,14 @@ function App() {
         </header>
         <main className={styles.container}>
           <Switch>
+            <Route path="/edit-listing">
+              <EditListing onSubmit={(job) => setJobs(editJobArray(job))} />
+            </Route>
             <Route path="/add-listing">
               <AddListing onSubmit={(newJob) => setJobs([...jobs, newJob])} />
             </Route>
-            <Route path="/edit-listing">
-              <EditListing onSubmit={(args) => setJobs(editJobArray(jobs, ...args))} />
-            </Route>
             <Route path="/">
-              <ViewListings title="Jobs" jobs={jobs} setJobs={setJobs} />
+              <ViewListings title="Jobs" jobs={jobs} />
             </Route>
           </Switch>
         </main>
