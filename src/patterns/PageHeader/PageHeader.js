@@ -1,8 +1,11 @@
+import { useHistory } from 'react-router-dom';
+
 import styles from './PageHeader.module.css'
 import Button from '../../components/Button';
 
 function PageHeader(props) {
   const { title, totalJobs = 0 } = props;
+  let history = useHistory();
 
   return (
     <div id="PageHeader" className={styles.header}>
@@ -11,9 +14,9 @@ function PageHeader(props) {
         <span className={styles.description}>{`${totalJobs} listings`}</span>
       </div>
       <div className={styles.right}>
-        <Button>Add Job</Button>
+        <Button onClick={() => history.push('/add-listing')}>Add Job</Button>
       </div>
-    </div>
+    </div >
   );
 }
 

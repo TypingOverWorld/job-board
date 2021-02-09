@@ -3,11 +3,14 @@
   --primary-color: #085ff7;
   --primary-color-darken: #0046DE;
   --white-color: #ffffff;
-  --background-color: #e5e5e5;
+  --black-color: #000000;
+  --background-color: #FAF9F8;
+  --button-hover-color: #f9f9f9;
   --grey-color-1: #d4d2d0;
   --grey-color-2: #c4c4c4;
   --grey-color-3: #949494;
-  --grey-color-4: #2d2d2d;
+  --grey-color-4: #767676;
+  --grey-color-5: #2d2d2d;
 
 
   /* Fonts */
@@ -16,8 +19,8 @@
 
   /* Font Size */
   --text-6: 1.75rem/1.25;
-  /* --text-5: 1.5rem/1.25;
-  --text-4: 1.25rem/1.5; */
+  /* --text-5: 1.5rem/1.25;*/
+  --text-4: 1.25rem/1.5; 
   --text-3: 1rem/1.5;
   --text-2: 0.875rem/1.5;
   --text-1: 0.75rem/1.5;
@@ -25,16 +28,25 @@
 
   /* Font Styles */
   --primary-bold-text-3: 700 var(--text-3) var(--primary-font);
-  --primary-text-3: 400 var(/--text-3) var(--primary-font);
+  --primary-bold-button-3: 700 1rem/1.125 var(--primary-font);
+  --primary-text-3: 400 var(--text-3) var(--primary-font);
+  --primary-text-2: 400 var(--text-2) var(--primary-font);
   --primary-text-1: 400 var(--text-1) var(--primary-font);
 
   --secondary-bold-text-6: 700 var(--text-6) var(--secondary-font);
+  --secondary-bold-text-4: 700 var(--text-4) var(--secondary-font);
   --secondary-bold-text-2: 700 var(--text-2) var(--secondary-font);
   --secondary-text-2: 400 var(--text-2) var(--secondary-font);
 
-  /* Border */
+  /* Outlines */
   --border-1px-solid: 1px solid var(--grey-color-1);
+  --border-1px-solid-md: 1px solid var(--grey-color-3);
   --border-radius: 8px;
+
+  --focus-boxshadow: 0 0 0 2px var(--white-color), 0 0 0 3px var(--primary-color-darken);
+
+  /* Transitions */
+  --button-transition: ease-in 0.3s;
 }
 
 * {
