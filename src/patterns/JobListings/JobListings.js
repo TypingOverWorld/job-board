@@ -8,7 +8,7 @@ function JobListings({ jobs }) {
 
   function handleSubmit(...args) {
     let job = { ...args };
-    history.push('./edit-listing', { params: job })
+    // history.push('./edit-listing', { params: job });
   };
 
   return (
