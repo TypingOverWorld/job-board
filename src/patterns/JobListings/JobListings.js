@@ -6,10 +6,10 @@ function JobListings({ jobs }) {
   const categories = ["Job Title", "Posted", "Sponsorship", "Status", ""];
   const history = useHistory();
 
-  function handleSubmit(...args) {
-    let job = { ...args };
-    // history.push('./edit-listing', { params: job });
-  };
+  // function handleSubmit(...args) {
+  //   let job = { ...args };
+  //   history.push('./edit-listing', { params: job })
+  // };
 
   return (
     <div id="jobListings" className={styles.jobListings}>
@@ -39,7 +39,7 @@ function JobListings({ jobs }) {
           </span>
           <span className={styles.listingText}>
             <Button
-              onClick={handleSubmit({ title, location, posted, sponsorship, status, id })}
+              onClick={() => history.push('/edit-listing')}
               type="secondary">
               Edit
             </Button>
