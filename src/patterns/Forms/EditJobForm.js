@@ -5,18 +5,17 @@ import Button from '../../components/Button';
 import { useHistory } from 'react-router-dom';
 
 function EditJobForm(props) {
-  const { jobToEdit, type, className: customClassName, onSubmit = () => { } } = props;
+  const { currentJob = {}, type, className: customClassName, onSubmit = () => { } } = props;
   const className = cx(styles.form, styles[type], {
     [customClassName]: !!customClassName
   });
   const history = useHistory();
   // couldn't deconstruct all props without have duplicated title, location, sponsorship, and status
-  const { id, posted } = jobToEdit;
-  console.log(id, posted);
-  const [title, setTitle] = useState(jobToEdit.title);
-  const [location, setLocation] = useState(jobToEdit.location);
-  const [sponsorship, setSponsorship] = useState(jobToEdit.sponsorship);
-  const [status, setStatus] = useState(jobToEdit.status);
+  const { id, posted } = currentJob;
+  const [title, setTitle] = useState(currentJob.title);
+  const [location, setLocation] = useState(currentJob.location);
+  const [sponsorship, setSponsorship] = useState(currentJob.sponsorship);
+  const [status, setStatus] = useState(currentJob.status);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -72,7 +71,7 @@ function EditJobForm(props) {
           onClick={() => history.push('/')}>
           Cancel
         </Button>
-        <Button>{type} Job</Button>
+        <Button>Save</Button>
       </section>
     </form >
   );

@@ -1,13 +1,11 @@
 import EditJobForm from '../patterns/Forms/EditJobForm';
 // import { useLocation } from 'react-router-dom';
 
-function EditListing({ onSubmit = () => { } }) {
-  // const locationHistory = useLocation();
-  // const jobToEdit = locationHistory.state.params;
-  const jobToEdit = {};
+function EditListing({ onSubmit = () => { }, currentJob = {} }) {
+
   return (
     <div id="EditListing">
-      <EditJobForm type="Edit" jobToEdit={jobToEdit} onSubmit={onSubmit} />
+      <EditJobForm type="Edit" currentJob={currentJob} onSubmit={onSubmit} />
     </div>
   );
 }
