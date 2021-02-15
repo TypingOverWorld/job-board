@@ -38,19 +38,19 @@ function EditJobForm(props) {
           <div>Job Title</div>
           <div className={styles.description}>What is the name of the role?</div>
         </label>
-        <input className={styles.input} type="text" name="title" id="jobTitle" value={title} placeholder={title} onChange={(e) => setTitle(e.target.value)} />
+        <input className={styles.input} type="text" name="title" id="jobTitle" value={title} placeholder={title} onChange={(e) => setTitle(e.target.value)} required />
 
         <label className={styles.label} for="jobLocation">
           <div>Location</div>
           <div className={styles.description}>Where is this job?</div>
         </label>
-        <input className={styles.input} type="text" name="location" id="jobLocation" value={location} placeholder={location} onChange={(e) => setLocation(e.target.value)} />
+        <input className={styles.input} type="text" name="location" id="jobLocation" value={location} placeholder={location} onChange={(e) => setLocation(e.target.value)} required />
 
         <label className={styles.label} for="sponsorship">
           <div>Sponsorship</div>
           <div className={styles.description}>Do you want to promote this job?</div>
         </label>
-        <select className={styles.select} name="sponsorship" id="sponsorship" value={sponsorship} onChange={(e) => setSponsorship(e.target.value)} >
+        <select className={styles.select} name="sponsorship" id="sponsorship" value={sponsorship} onChange={(e) => setSponsorship(e.target.value)} required>
           <option value="Free">Free</option>
           <option value="Sponsored">Sponsored</option>
         </select>
@@ -59,7 +59,7 @@ function EditJobForm(props) {
           <div>Status</div>
           <div className={styles.description}>Are you ready to make this job listing public?</div>
         </label>
-        <select className={styles.select} name="status" id="status" value={status} onChange={(e) => setStatus(e.target.value)} >
+        <select className={styles.select} name="status" id="status" value={status} onChange={(e) => setStatus(e.target.value)} required>
           <option value="Open">Open</option>
           <option value="Paused">Paused</option>
           <option value="Closed">Closed</option>
